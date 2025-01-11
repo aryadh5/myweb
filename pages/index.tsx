@@ -32,7 +32,7 @@ export default function Home({ allPostsData, homePageData, projects }: HomeProps
             </li>
           ))}
         </ul>
-        <Link href="/blog">View all blog posts</Link>
+        <Link href="/blog">View all blog articles</Link>
       </section>
       <section>
         <h2 className="mt-2 mb-3">Projects</h2>
