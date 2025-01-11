@@ -17,7 +17,7 @@ export const About = ({ name, aboutText }: AboutProps) => {
           </p>
         </div>
         <Image
-          src="/images/circle-photo.png"
+          src="/images/pfp.png"
           height={280}
           width={280}
           alt="Me and the doggo"

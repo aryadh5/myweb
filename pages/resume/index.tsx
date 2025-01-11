@@ -5,8 +5,10 @@ export default function Resume() {
   return (
     <Layout description="My resume" title="Resume">
       <div className="rounded-lg border p-4 border-solid border-gray-400 mt-2">
-        <h1 className="text-5xl pb-2 -tracking-2">Will Saada</h1>
-        <h2 className="text-2xl pb-2 text-blue-600 -tracking-2">Full Stack Software Engineer</h2>
+        <h1 className="text-5xl pb-2 -tracking-2">Arya Difa Hendrawan</h1>
+        <h2 className="text-2xl pb-2 text-blue-600 -tracking-2">
+          Search Engine Optimization Specialist
+        </h2>
         <div className="md:grid grid-cols-3 gap-4">
           <div className="col-span-2">
             <Section title="Work Experience">
@@ -32,15 +34,15 @@ export default function Resume() {
               <List items={['Next.js', 'Express & Fastify', 'CosmosDB & SQL', 'Unity']} />
             </Section>
             <Section title="Education">
-              <p className="font-semibold">University of Richmond</p>
-              <p>Class of 2019</p>
-              <p>Computer Science and Mathematics</p>
+              <p className="font-semibold">Ahmad Dahlan University</p>
+              <p>Class of 2020</p>
+              <p>Informatics Graduate</p>
             </Section>
             <Section title="Interests">
-              <List items={['Game Dev & Modding', 'Collectibles', 'Cleveland Sports', 'Running']} />
+              <List items={['Coffee', 'Music', 'Liverpool FC', 'Gaming']} />
             </Section>
             <Section title="Contact">
-              <a href="mailto:willsaada19@gmail.com">willsaada19@gmail.com</a>
+              <a href="mailto:aryadifah@gmail.com">aryadifah@gmail.com</a>
             </Section>
           </div>
         </div>
