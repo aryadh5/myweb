@@ -1,33 +1,114 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch } from './switch';
+import { FaHome, FaBlog, FaSuitcase, FaUser } from 'react-icons/fa'; // Using React Icons for buttons
 
 type NavigationProps = {
   hideLinks: boolean;
 };
 
 export const Navigation = ({ hideLinks = false }: NavigationProps) => {
+  const [showSideNavbar, setShowSideNavbar] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // Function to handle scroll behavior
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY && window.scrollY > 50) {
+      setShowSideNavbar(true); // Scrolling down, show side navbar
+    } else {
+      setShowSideNavbar(false); // Scrolling up, hide side navbar
+    }
+    setLastScrollY(window.scrollY); // Update the scroll position
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll); // Cleanup
+    };
+  }, [lastScrollY]);
+
   return (
-    <nav className="mt-2 mb-4 text-base h-6">
-      {!hideLinks && (
-        <>
-          <Link href="/" className="mr-1 md:mr-2">
-            Home
-          </Link>
-          <Link href="/blog" className="mx-1 md:mx-3">
-            Blog
-          </Link>
-          <Link href="/portfolio" className="mx-1 md:mx-3">
-            Portfolio
-          </Link>
-          <Link href="/resume" className="ml-1 md:mx-3">
-            Resume
-          </Link>
-        </>
-      )}
-      <span className="sm:block float-right sticky top-5 z-50">
-        <Switch className="px-2" />
-      </span>
-    </nav>
+    <div className="relative">
+      {/* Main Navbar with Links */}
+      <nav className="mt-8 mb-6 flex justify-center items-center text-lg font-semibold tracking-wide h-16 space-x-8">
+        {!hideLinks && (
+          <>
+            <Link
+              href="/"
+              className="relative text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
+            >
+              Home
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-indigo-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+            </Link>
+            <Link
+              href="/blog"
+              className="relative text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
+            >
+              Blog
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-indigo-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+            </Link>
+            <Link
+              href="/portfolio"
+              className="relative text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
+            >
+              Portfolio
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-indigo-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+            </Link>
+            <Link
+              href="/resume"
+              className="relative text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
+            >
+              Resume
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-indigo-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+            </Link>
+          </>
+        )}
+      </nav>
+
+      {/* Side Navbar with Icons only */}
+      <div
+        className={`fixed top-1/2 right-0 transform -translate-y-1/2 p-4 space-y-6 transition-all duration-500 z-50 ${
+          showSideNavbar ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        style={{
+          width: '60px', // Width of the icon container
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)', // Soft shadow for elegance
+          borderRadius: '12px',
+          backgroundColor: 'transparent', // Transparent background for both light and dark mode
+          backdropFilter: 'none', // No blur effect for transparency
+        }}
+      >
+        <Link
+          href="/"
+          className="block text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-transform duration-300 transform hover:scale-110"
+        >
+          <FaHome size={30} />
+        </Link>
+        <Link
+          href="/blog"
+          className="block text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-transform duration-300 transform hover:scale-110"
+        >
+          <FaBlog size={30} />
+        </Link>
+        <Link
+          href="/portfolio"
+          className="block text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-transform duration-300 transform hover:scale-110"
+        >
+          <FaSuitcase size={30} />
+        </Link>
+        <Link
+          href="/resume"
+          className="block text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-transform duration-300 transform hover:scale-110"
+        >
+          <FaUser size={30} />
+        </Link>
+
+        {/* Dark/Light Mode Switch (Smaller and streamlined) */}
+        <div className="mt-6 flex justify-center">
+          <Switch className="p-1 bg-transparent" />
+        </div>
+      </div>
+    </div>
   );
 };
