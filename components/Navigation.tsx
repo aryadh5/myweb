@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { Switch } from './switch';
-import { FaHome, FaBlog, FaSuitcase, FaUser } from 'react-icons/fa';
+import { FaHome, FaBlog, FaSuitcase, FaUser, FaBars, FaTimes } from 'react-icons/fa';
 
 type NavigationProps = {
   hideLinks: boolean;
@@ -10,6 +10,8 @@ type NavigationProps = {
 export const Navigation = ({ hideLinks = false }: NavigationProps) => {
   const [showSideNavbar, setShowSideNavbar] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false); // To handle client-specific rendering
 
   // Function to handle scroll behavior
   const handleScroll = () => {
@@ -22,6 +24,8 @@ export const Navigation = ({ hideLinks = false }: NavigationProps) => {
   };
 
   useEffect(() => {
+    // Ensure that client-side logic only runs after the first render
+    setIsClient(true);
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll); // Cleanup
@@ -32,8 +36,29 @@ export const Navigation = ({ hideLinks = false }: NavigationProps) => {
     <div className="relative">
       {/* Main Navbar with Links */}
       <nav className="mt-8 mb-6 flex justify-between items-center text-lg font-semibold tracking-wide h-16 px-4 sm:px-8 md:px-12 lg:px-16">
+        {/* Logo and Hamburger Icon for Mobile */}
+        <div className="flex items-center space-x-4 w-full">
+          <Link href="/" className="text-gray-800 dark:text-white font-semibold">
+            Logo
+          </Link>
+
+          {/* Hamburger Menu for Small Screens */}
+          {isClient && (
+            <button
+              className="lg:hidden text-gray-800 dark:text-white"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </button>
+          )}
+        </div>
+
         {/* Links - Visible on Medium and Larger Screens */}
-        <div className="flex items-center justify-start w-full max-w-screen-lg mx-auto lg:mx-0 space-x-6">
+        <div
+          className={`lg:flex items-center space-x-6 ${
+            isMobileMenuOpen ? 'block' : 'hidden'
+          } lg:block`}
+        >
           {!hideLinks && (
             <>
               <Link
@@ -61,7 +86,7 @@ export const Navigation = ({ hideLinks = false }: NavigationProps) => {
                 href="/resume"
                 className="relative text-gray-800 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
               >
-                Resume
+                Experience
                 <span className="absolute bottom-0 left-0 w-full h-1 bg-indigo-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
               </Link>
             </>

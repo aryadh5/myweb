@@ -10,13 +10,13 @@ export const About = ({ name, aboutText }: AboutProps) => {
   return (
     <section className="w-full mt-12">
       {/* Header Section */}
-      <div className="flex flex-col sm:flex-row sm:justify-between items-center sm:items-start">
+      <div className="flex flex-col sm:flex-row sm:justify-between items-center sm:items-start px-4 sm:px-0">
         <div className="sm:w-1/2 lg:w-1/3 text-center sm:text-left mb-6 sm:mb-0">
           <h1 className="text-4xl sm:text-5xl font-semibold text-gray-900 dark:text-white">
             {name}
           </h1>
           <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mt-2">
-            SEO Specialist, Indonesia
+            Bekasi, Indonesia
           </p>
         </div>
         <div className="sm:w-1/3 flex justify-center sm:justify-start mb-6 sm:mb-0">
