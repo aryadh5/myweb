@@ -16,6 +16,7 @@ export const Card = ({ children, className = '' }: CardProps) => {
         p-3
         transform
         transition
+        rounded-lg
         duration=300
         hover:scale-1025
       `}

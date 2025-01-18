@@ -60,7 +60,7 @@ const jobs = [
   {
     title: 'SEO Specialist',
     company: 'PT. Indo Koala Remittance (Jack & Transfez)',
-    location: 'Bekasi, Indonesia',
+    location: 'Jakarta, Indonesia',
     date: 'Sep 2024 – Present',
     story:
       'Stepping into the world of SEO, my journey began by recovering from a significant website issue. I quickly optimized content, rebuilt strategies, and helped drive growth even in the face of challenges. It’s been a real learning experience, and I’m still growing every day!',
@@ -69,7 +69,7 @@ const jobs = [
   {
     title: 'HTML Writer Intern',
     company: 'PT. Dialogika Persona Indonesia',
-    location: 'Jakarta, Indonesia',
+    location: 'Yogyakarta, Indonesia',
     date: 'Mar 2024 – Jun 2024',
     story:
       'I embarked on this internship to dive deep into SEO and web development. My work ranged from creating responsive webpages to crafting SEO-optimized blog posts. One of the highlights was seeing some of my optimized posts rank on the first page of Google!',
@@ -81,25 +81,13 @@ const jobs = [
   {
     title: 'Android Developer',
     company: 'CV. Gama Putra Santosa (GPS)',
-    location: 'Bekasi, Indonesia',
+    location: 'Yogyakarta, Indonesia',
     date: 'Oct 2023 – Jan 2024',
     story:
       'As an Android Developer, I had the exciting challenge of creating a Point-of-Sale (POS) app. It was my first time working in mobile development, and the experience taught me a lot about app architecture and API integration.',
     accomplishments: [
       'Developed frontend features of a Warung Soto POS app using Java and XML.',
       'Integrated APIs for order processing and user authentication.',
-    ],
-  },
-  {
-    title: 'Lab Assistant',
-    company: 'Informatika Universitas Ahmad Dahlan',
-    location: 'Yogyakarta, Indonesia',
-    date: 'Mar 2023 – Jul 2023',
-    story:
-      'This was my first step into teaching and mentoring others. I helped students navigate complex database queries and data visualization tasks. It was a fulfilling role that also strengthened my own knowledge.',
-    accomplishments: [
-      'Assisted students with lab exercises in database and data visualization courses.',
-      'Organized student registration and managed lab sessions.',
     ],
   },
 ];

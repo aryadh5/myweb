@@ -8,26 +8,33 @@ type AboutProps = {
 
 export const About = ({ name, aboutText }: AboutProps) => {
   return (
-    <>
-      <div className="flex flex-col-reverse justify-center w-full items-center sm:flex-row sm:justify-between">
-        <div className="grow w-full mt-4 sm:mt-0 sm:w-auto">
-          <h1 className="sm:text-4xl tracking-tight sm:mt-0">{name}</h1>
-          <p className="text-xl sm:text-2xl text-gray-500 dark:text-gray-400 tracking-tighter">
+    <section className="w-full mt-12">
+      {/* Header Section */}
+      <div className="flex flex-col sm:flex-row sm:justify-between items-center sm:items-start">
+        <div className="sm:w-1/2 lg:w-1/3 text-center sm:text-left mb-6 sm:mb-0">
+          <h1 className="text-4xl sm:text-5xl font-semibold text-gray-900 dark:text-white">
+            {name}
+          </h1>
+          <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mt-2">
             SEO Specialist, Indonesia
           </p>
         </div>
-        <Image
-          src="/images/pfp.png"
-          height={280}
-          width={280}
-          alt="Me and the doggo"
-          priority={true}
-        />
-        <div></div>
+        <div className="sm:w-1/3 flex justify-center sm:justify-start mb-6 sm:mb-0">
+          <Image
+            src="/images/pfp.png"
+            height={280}
+            width={280}
+            alt="Me and the doggo"
+            className="rounded-full border-4 border-blue-600 shadow-xl"
+            priority={true}
+          />
+        </div>
       </div>
-      <div className="bg-blue-600 shadow-xl mt-5 mb-6 p-3 text-lg text-white md:p-5">
-        <p>{aboutText}</p>
+
+      {/* About Text Section */}
+      <div className="bg-blue-600 shadow-lg mt-8 p-6 sm:p-8 rounded-xl text-white">
+        <p className="text-lg sm:text-xl">{aboutText}</p>
       </div>
-    </>
+    </section>
   );
 };
