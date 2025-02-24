@@ -5,11 +5,11 @@ const Hero = () => (
   <section className="relative text-center py-24 bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-indigo-800 dark:to-blue-800 text-white rounded-lg">
     <div className="max-w-4xl mx-auto px-4">
       <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight">
-        Journey of a Curious Technophile 💻✨
+        My professional experience
       </h1>
       <p className="text-lg sm:text-xl font-light text-gray-200 dark:text-gray-300 mb-6">
         From crafting SEO strategies to developing mobile apps, my passion for technology drives me
-        to constantly innovate and grow. Join me on my professional journey!
+        to constantly innovate and grow.
       </p>
       <p className="text-lg sm:text-xl font-light text-gray-200 dark:text-gray-300 mb-6">
         My mission? To create impactful digital experiences and solve complex problems, all while
@@ -63,7 +63,7 @@ const jobs = [
     location: 'Jakarta, Indonesia',
     date: 'Sep 2024 – Present',
     story:
-      'Stepping into the world of SEO, my journey began by recovering from a significant website issue. I quickly optimized content, rebuilt strategies, and helped drive growth even in the face of challenges. It’s been a real learning experience, and I’m still growing every day!',
+      'Stepping into the world of SEO, my journey began by recovering from a significant website issue. I quickly optimized content, rebuilt strategies, and helped drive growth even in the face of challenges. It has s been a real learning experience, and I am still learning every day',
     accomplishments: [],
   },
   {
@@ -125,7 +125,10 @@ const education = [
 // Contact CTA (Make it more inviting)
 const ContactCTA = () => (
   <section className="text-center py-16 bg-indigo-600 dark:bg-indigo-800 text-white rounded-lg shadow-lg">
-    <h2 className="text-4xl font-bold mb-4">Ready to Create Something Amazing? 💡</h2>
+    <h2 className="text-4xl font-bold mb-4">Let’s Connect</h2>
+    <p className="text-lg text-gray-200 dark:text-gray-300 mb-6">
+      Have a project in mind or just want to chat? Feel free to reach out.
+    </p>
     <a
       href="mailto:aryadifah@gmail.com"
       className="mt-4 inline-block bg-white dark:bg-gray-900 text-indigo-600 dark:text-indigo-300 font-semibold px-8 py-3 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition"

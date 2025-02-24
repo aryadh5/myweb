@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { Switch } from './switch';
 import { FaHome, FaBlog, FaSuitcase, FaUser, FaBars, FaTimes } from 'react-icons/fa';
+import Image from 'next/image';
 
 type NavigationProps = {
   hideLinks: boolean;
@@ -38,8 +39,8 @@ export const Navigation = ({ hideLinks = false }: NavigationProps) => {
       <nav className="mt-8 mb-6 flex justify-between items-center text-lg font-semibold tracking-wide h-16 px-4 sm:px-8 md:px-12 lg:px-16">
         {/* Logo and Hamburger Icon for Mobile */}
         <div className="flex items-center space-x-4 w-full">
-          <Link href="/" className="text-gray-800 dark:text-white font-semibold">
-            Logo
+          <Link href="/">
+            <Image src="/adh.png" alt="Logo" width={100} height={50} className="w-auto h-12" />
           </Link>
 
           {/* Hamburger Menu for Small Screens */}

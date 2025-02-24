@@ -21,7 +21,7 @@ export const About = ({ name, aboutText }: AboutProps) => {
         </div>
         <div className="w-full sm:w-1/3 flex justify-center sm:justify-start mb-6 sm:mb-0">
           <Image
-            src="/images/pfp.png"
+            src="/images/kokjadicina.png"
             height={280}
             width={280}
             alt="Me and the doggo"
