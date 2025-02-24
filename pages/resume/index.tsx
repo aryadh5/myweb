@@ -63,7 +63,7 @@ const jobs = [
     location: 'Jakarta, Indonesia',
     date: 'Sep 2024 – Present',
     story:
-      'Stepping into the world of SEO, my journey began by recovering from a significant website issue. I quickly optimized content, rebuilt strategies, and helped drive growth even in the face of challenges. It has s been a real learning experience, and I am still learning every day',
+      'From research and content creation to technical improvements like site speed optimization, I focused on making things work better. Im still learning and refining my approach every day',
     accomplishments: [],
   },
   {
